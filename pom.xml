@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.geo.gkez</groupId>
+    <artifactId>quarkus-libraries</artifactId>
+    <version>999-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <quarkus-platform-bom-plugin.version>0.0.107</quarkus-platform-bom-plugin.version>
+        <version.versions.plugin>2.17.1</version.versions.plugin>
+    </properties>
+
+    <modules>
+        <module>bom</module>
+        <module>build-parent</module>
+
+        <module>extensions</module>
+    </modules>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-platform-bom-maven-plugin</artifactId>
+                    <version>${quarkus-platform-bom-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${version.versions.plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
